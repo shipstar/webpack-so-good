@@ -3,6 +3,8 @@ import React from 'react'
 import Stepper from './stepper'
 import store from './store'
 import astley from './astley'
+import sample from './sample.md'
+import './github'
 
 export default class Counter extends React.Component {
   constructor(props) {
@@ -60,6 +62,11 @@ export default class Counter extends React.Component {
         <img
           style={{ marginTop: 50, display: 'block' }}
           src={astley}
+        />
+
+        <div
+          className='github'
+          dangerouslySetInnerHTML={{__html: sample}}
         />
       </div>
     )

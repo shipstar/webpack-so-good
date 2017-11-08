@@ -6,6 +6,23 @@ environment.plugins.set(
   new DashboardPlugin()
 )
 
+environment.loaders.set(
+  'markdown', {
+    test: /\.md$/,
+    use: [
+      {
+        loader: "html-loader"
+      },
+      {
+        loader: "markdown-loader",
+        options: {
+          /* your options here */
+        }
+      }
+    ]
+  }
+)
+
 module.exports = environment.toWebpackConfig()
 
 // Alternative approach:
