@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Stepper from './stepper'
 import store from './store'
 
 export default class Counter extends React.Component {
@@ -23,6 +25,12 @@ export default class Counter extends React.Component {
     })
   }
 
+  changeValue(amount) {
+    this.setState({
+      value: store.change(amount)
+    })
+  }
+
   changeStep(step) {
     this.setState({ step })
   }
@@ -34,14 +42,18 @@ export default class Counter extends React.Component {
           Value: {this.state.value}
         </p>
 
-        <button onClick={() => this.increment()}>+</button>
-        <button onClick={() => this.decrement()}>-</button>
-
         <label>Step: </label>
         <input
           type="number"
           onChange={e => this.changeStep(parseInt(e.target.value))}
           value={this.state.step}
+        />
+
+        <br /> <br />
+
+        <Stepper
+          changeValue={amount => this.changeValue(amount)}
+          step={this.state.step}
         />
       </div>
     )

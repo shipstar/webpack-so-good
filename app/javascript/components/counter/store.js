@@ -9,6 +9,10 @@ module.exports = {
     return counter -= step
   },
 
+  change: (amount) => {
+    return counter += amount
+  },
+
   value: () => {
     return counter
   }
