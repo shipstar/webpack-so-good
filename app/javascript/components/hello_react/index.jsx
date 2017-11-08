@@ -1,9 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './dark.scss'
+
 const Hello = props => (
   <div>
-    Hello {props.name}!
+    <div className='big-div'>
+      Hello {props.name}!
+    </div>
+
+    <div className='big-div dark'>
+      WATCH OUT, {props.name}!
+    </div>
   </div>
 )
 
