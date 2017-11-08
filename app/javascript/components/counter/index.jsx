@@ -2,6 +2,7 @@ import React from 'react'
 
 import Stepper from './stepper'
 import store from './store'
+import astley from './astley'
 
 export default class Counter extends React.Component {
   constructor(props) {
@@ -54,6 +55,11 @@ export default class Counter extends React.Component {
         <Stepper
           changeValue={amount => this.changeValue(amount)}
           step={this.state.step}
+        />
+
+        <img
+          style={{ marginTop: 50, display: 'block' }}
+          src={astley}
         />
       </div>
     )
